@@ -17,19 +17,19 @@
 from awake import address
 from awake.operand import Constant, Condition, Dereference, Register
 
-BC = Register("BC")
-DE = Register("DE")
-HL = Register("HL")
-SP = Register("SP")
-AF = Register("AF")
+BC = Register("BC_16bit_Register")
+DE = Register("DE_16bit_Register")
+HL = Register("HL_16bit_Register")
+SP = Register("SP_16bit_Register")
+AF = Register("AF_16bit_Register")
 
-B = Register("B")
-C = Register("C")
-D = Register("D")
-E = Register("E")
-H = Register("H")
-L = Register("L")
-A = Register("A")
+B = Register("B_8bit_Register")
+C = Register("C_8bit_Register")
+D = Register("D_8bit_Register")
+E = Register("E_8bit_Register")
+H = Register("H_8bit_Register")
+L = Register("L_8bit_Register")
+A = Register("A_8bit_Register")
 deref_HL = Dereference(HL, address.fromVirtual(0))  # XXX: TODO: very very bad
 
 FNZ = Condition("FNZ")

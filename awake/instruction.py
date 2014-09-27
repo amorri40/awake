@@ -316,6 +316,10 @@ class CallInstruction(Instruction):
             return param
 
     def signature(self):
+        """
+        Get the function signature of the function we are calling
+        :return:
+        """
         x = ''
         if not self.cond.alwaysTrue():
             x = 'CONDITIONAL'
@@ -332,7 +336,7 @@ class CallInstruction(Instruction):
             ins = ' @ (' + ins + ')'
         if not outs:
             outs = 'void'
-        return x + ins + ' -> ' + outs
+        return x + ' parameters: '+ins + ' -> returns ' + outs
 
 
 class TailCall(CallInstruction):

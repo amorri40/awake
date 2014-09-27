@@ -16,7 +16,15 @@ effect:
 	- plus for proc signature
 	- could use PC target instead
 
+-- IDEAS: --
+- read .map/.sym generated from pokered/pokecrystal
+- show whole file as boxes with red: unknown, blue:data and green: decompiled
+- page that shows all known procedures/ data etc
+- generate data through emulator into database
+- recompile back to rom with md5 check
+- add rename for proc/data via UI to give meaningful names
 
+-- CODE --
 
 effect = Effect((addr, value), BC=value2)
 

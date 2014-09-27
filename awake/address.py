@@ -141,25 +141,25 @@ class Address(object):
             return "{:04X}:{:04X}".format(self.bank(), self.virtual())
 
         elif self.virtual() < 0xA000:
-            return "VRAM:{:04X}".format(self.virtual())
+            return "VideoRAM:{:04X}".format(self.virtual())
 
         elif self.virtual() < 0xC000:
             return "BATT:{:04X}".format(self.virtual())
 
         elif self.virtual() < 0xE000:
-            return "WORK:{:04X}".format(self.virtual())
+            return "WorkRAMBank:{:04X}".format(self.virtual())
 
         elif self.virtual() < 0xFE00:
-            return "ECHO:{:04X}".format(self.virtual())
+            return "Same_as_C000_ECHO:{:04X}".format(self.virtual())
 
         elif self.virtual() < 0xFF00:
-            return "OAM:{:04X}".format(self.virtual())
+            return "SpriteAttributeTable_OAM:{:04X}".format(self.virtual())
 
         elif self.virtual() < 0xFF80 or self.virtual() == 0xFFFF:
             return "IO:{:04X}".format(self.virtual())
 
         elif self.virtual() < 0xFFFF:
-            return "HRAM:{:04X}".format(self.virtual())
+            return "HighRAM:{:04X}".format(self.virtual())
 
         else:
             return "(V):{:04X}".format(self.virtual())

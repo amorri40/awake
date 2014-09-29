@@ -166,6 +166,14 @@ class SummaryPage(Page):
 
         c.close()
 
+class AllCodeAndDataPage(Page):
+    def load(self):
+        pass
+
+    def render(self, renderer):
+        renderer.add('All Code and Data as a big ASM file will go here!')
+
+
 class BankSummaryPage(Page):
     def load(self):
         p = self.url.split('/')
@@ -223,3 +231,5 @@ def dispatchUrl(proj, url):
         return SummaryPage(proj, url)
     elif url.startswith('/bank/'):
         return BankSummaryPage(proj, url)
+    elif url.startswith('/all/'):
+        return AllCodeAndDataPage(proj, url)
